@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  stack:
+    image: hopsoft/graphite-statsd
+    container_name: graphite
+    ports:
+      - 80:80
+      - 81:81
+      - 2003-2004:2003-2004
+      - 2023-2024:2023-2024
+      - 8125:8125/udp
+      - 8126:8126
+    volumes:
+      - ./conf/graphite/configs:/opt/graphite/conf/configs
+      - ./conf/graphite_storage:/opt/graphite/storage
+      # - ./conf/grafana:/etc/grafana
+      # - ./conf/nginx:/etc/nginx
+      - ./conf/statsd:/opt/statsd
+      - ./conf/logrotate:/etc/logrotate.d
+      - ./conf/logs:/var/log
+    restart: always
