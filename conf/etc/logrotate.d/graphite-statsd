@@ -1,8 +1,0 @@
-/var/log/*.log /var/log/carbon/*.log /var/log/graphite/*.log {
-  daily
-  missingok
-  rotate 14
-  compress
-  notifempty
-  copytruncate
-}
