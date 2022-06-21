@@ -13,10 +13,10 @@ services:
       - 8126:8126
     volumes:
       - ./conf/graphite/configs:/opt/graphite/conf/configs
-      - ./conf/graphite_storage:/opt/graphite/storage
+      - ./conf/graphite_storage/storage-schemas.conf:/opt/graphite/conf/storage-schemas.conf
       # - ./conf/grafana:/etc/grafana
       # - ./conf/nginx:/etc/nginx
       - ./conf/statsd:/opt/statsd
       - ./conf/logrotate:/etc/logrotate.d
-      - ./conf/logs:/var/log
+      # - ./conf/logs:/var/log
     restart: always
