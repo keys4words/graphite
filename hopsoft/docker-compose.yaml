@@ -20,3 +20,9 @@ services:
       - ./conf/logrotate:/etc/logrotate.d
       # - ./conf/logs:/var/log
     restart: always
+
+  flask:
+    build: ./flask
+    ports:
+      - 8888:8888
+    
